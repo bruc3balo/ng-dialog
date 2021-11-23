@@ -1,0 +1,78 @@
+ <button ejs-button id='modalbtn' #modalButton (click)="modalBtnClick()">Open Add Modal</button> <p></p>
+
+ <button ejs-button id='modalbtn' #editmodalButton (click)="openEdit()">Open Edit Modal</button> 
+
+<ejs-dialog #modaldialog class="modal" [isModal]='true' [closeOnEscape]=false *ngIf="showModal == true" [buttons]='modalbuttons'>
+	<div class="e-dlg-header-content">
+		<button class="e-dlg-closeicon-btn e-control e-btn e-flat e-icon-btn" type="button" title="Close">
+        <span class="e-btn-icon e-icon-dlg-close e-icons"></span>
+      </button>
+		<div class="e-dlg-header" id="_title">ADD FORM</div>
+	</div>
+
+	<div style="padding-left:50px"> 
+		<div class="row"> 
+      <div class="col-md-10 col-sm-10 col-xs-10">
+				<label class="addClientLabel">Name</label>
+				<div class="">
+					<input type="text" class="textbox" [(ngModel)]="_name">
+				</div>
+			</div>
+
+			<div class="col-md-10 col-sm-10 col-xs-10">
+				<label class="addClientLabel">Questions</label>
+				<div class="">
+					<ejs-multiselect zIndex=100001 [dataSource]='multiselectdata' [fields]='dataFields' [mode]='databox' [popupHeight]='300'
+					 [showDropDownIcon]='true' (select)="questionSelect($event)" (removed)="questionDeselect($event)" [selectAllText]='selectAllText' 
+					 showSelectAll='true'></ejs-multiselect>
+				</div>
+			</div>
+
+			<div class="col-md-2 col-sm-2 col-xs-2">
+				<label class="addClientLabel" style="margin: -6px -14px 0 !important">Item</label>
+				<div class="row margin2-right">
+					<ejs-dropdownlist zIndex=100001 [dataSource]='dropdowndata' [fields]='itemFields' (select)="itemSelect($event)"></ejs-dropdownlist>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ejs-dialog>
+
+
+<ejs-dialog #modaldialog class="modal" [isModal]='true' [closeOnEscape]=false *ngIf="showEditModal == true" [buttons]='editbtns'>
+	<div class="e-dlg-header-content">
+		<button class="e-dlg-closeicon-btn e-control e-btn e-flat e-icon-btn" type="button" title="Close">
+        <span class="e-btn-icon e-icon-dlg-close e-icons"></span>
+      </button>
+		<div class="e-dlg-header" id="_title">EDIT FORM</div>
+	</div>
+
+	<div style="padding-left:50px">
+		<div class="row">
+      <div class="col-md-10 col-sm-10 col-xs-10">
+				<label class="addClientLabel">Name</label>
+				<div class="">
+					<input type="text" class="textbox" [(ngModel)]="_editName">
+				</div>
+			</div>
+
+			<div class="col-md-10 col-sm-10 col-xs-10">
+				<label class="addClientLabel">Questions</label>
+				<div class="">
+					<ejs-multiselect zIndex=100001 [dataSource]='multiselectdata' [fields]='dataFields' [mode]='databox' [popupHeight]='300'
+					 [showDropDownIcon]='true' (select)="questionSelect($event)" (removed)="questionDeselect($event)" [selectAllText]='selectAllText' [value]="multiselectvalue"
+					 showSelectAll='true'></ejs-multiselect>
+				</div>
+			</div>
+
+			<div class="col-md-2 col-sm-2 col-xs-2">
+				<label class="addClientLabel" style="margin: -6px -14px 0 !important">Item</label>
+				<div class="row margin2-right">
+					<ejs-dropdownlist zIndex=100001 [dataSource]='dropdowndata' [fields]='itemFields' (select)="itemSelect($event)" [value]="dropval" ></ejs-dropdownlist>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ejs-dialog>

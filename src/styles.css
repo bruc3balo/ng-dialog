@@ -1,0 +1,12 @@
+/* Add application styles & imports to this file! */
+  span.e-btn-icon.e-icon-dlg-pin.e-icons::before {
+    content: "\e7aa";
+ }
+#custombtn1:active, #custombtn1:hover, #custombtn1:focus, #custombtn2:active, #custombtn2:hover,  #custombtn2:focus {
+    background-color: transparent; 
+    border-color: transparent; 
+    box-shadow: transparent;
+} 
+ span.e-btn-icon.e-icon-expand.e-icons::before {
+    content: "\e919"; 
+}

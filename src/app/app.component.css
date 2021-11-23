@@ -1,0 +1,25 @@
+p {
+  font-family: Lato;
+}
+
+.modal {
+    max-height: none !important;
+    width: 79% !important;
+    left: 0px !important;
+    top: 0px !important;
+    position: relative !important;
+    z-index: 1001 !important;
+    height: 301px !important;
+}
+
+.addClientLabel {
+  color: #5777bc;
+  font-size: 13px;
+}
+ .textbox{
+height: 21px;
+    width: 93%;
+    border: 1px solid #b5b2b2;
+    border-radius: 8px;
+    padding: 2px 0px 3px 8px;
+ } 
